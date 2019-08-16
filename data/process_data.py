@@ -11,8 +11,6 @@ from sqlalchemy import create_engine
 def load_data(message_filepath, categories_filepath):
     
     '''
-    
-    
     load_data function --> takes two inputs messages_file path and categories_filepath
     and loads the datasets for concatenation and input to next steps as defined in main()
     
@@ -21,7 +19,6 @@ def load_data(message_filepath, categories_filepath):
     
     OUTPUT
         Concatenated data frame 'df'merged on 'id'
-    
     '''
     
     # load messages dataset
@@ -39,11 +36,8 @@ def load_data(message_filepath, categories_filepath):
 def clean_data(df):
 
     '''
-    DOC STRING
-    
     clean_data function --> Cleasn the data frame by renaming the columns and splitting in to 36 categories 
 
-    
     INPUT
         'df' data frame from the load_data function above
     
@@ -75,7 +69,6 @@ def clean_data(df):
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
     
-    
     # Remove duplicates
     df.drop_duplicates(subset='id', inplace=True)
     
@@ -91,7 +84,7 @@ def save_data(df, database_filename):
         database_filename for saving
     
     OUTPUT
-    
+        saves the data to the database file. Returns nothing, so using pass    
     """
     
     engine = create_engine('sqlite:///'+ database_filename)
