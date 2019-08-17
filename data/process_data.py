@@ -55,6 +55,9 @@ def clean_data(df):
     # use this row to extract a list of new column names for categories.
     category_colnames = [r[:-2] for r in row]
     
+    # reivew feedback updated
+    categories.columns = category_colnames
+    
     # rename the columns of `categories`
     for column in categories:
         #renaming the columns in categories
