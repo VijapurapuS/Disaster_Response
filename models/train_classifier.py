@@ -13,10 +13,11 @@ from sqlalchemy import create_engine
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import train_test_split
 from sklearn.multioutput import MultiOutputClassifier
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.metrics import fbeta_score, classification_report
+from sklearn.metrics import make_scorer, accuracy_score, f1_score, fbeta_score, classification_report
+from sklearn.model_selection import GridSearchCV
 
 import nltk
 from nltk.tokenize import word_tokenize
@@ -138,6 +139,14 @@ def build_model():
     Model building using Pipeline and Feature Union
     CountVectorizer, TFIDF and MultiOutput Classifier are run here sequentially
     '''
+# Adding the first model and commenting for mentor feedback. Updated model below
+#     model = Pipeline([
+#         ('vect', CountVectorizer(tokenizer=tokenize)),
+#         ('tfidf', TfidfTransformer()),
+#         ('clf', MultiOutputClassifier(RandomForestClassifier())),
+#     ])
+
+#     return pipeline
     
     model = Pipeline([
         ('features', FeatureUnion([
@@ -182,19 +191,26 @@ def multioutput_fscore(y_true,y_pred,beta=1):
     
     return  f1score
 
-def evaluate_model(model, X_test, Y_test, category_names):
+def evaluate_model(model, X_test, y_test, category_names):
     '''
     Model Evaluation
     INPUT
-        Takes 4 arguments model, X_test, Y_test, categories
+        Takes 4 arguments model, X_test, y_test, categories
     OUTPUT
         Prints Accuracy and F1 scores
     '''
-    Y_pred = model.predict(X_test)
-    multi_f1 = multioutput_fscore(Y_test,Y_pred, beta = 1)
-    overall_accuracy = (Y_pred == Y_test).mean().mean()
+    y_pred = model.predict(X_test)
+    multi_f1 = multioutput_fscore(y_test,y_pred, beta = 1)
+    overall_accuracy = (y_pred == y_test).mean().mean()
     print('Average overall accuracy {0:.2f}% \n'.format(overall_accuracy*100))
     print('F1 score (custom definition) {0:.2f}%\n'.format(multi_f1*100))
+    
+    # Mentor Feedback - adding in Classification Report for each category
+    y_pred_pd = pd.DataFrame(y_pred, columns = y_test.columns)
+    for col in y_test.columns:
+            print('******************************************************\n')
+            print('FEATURE: {}\n'.format(col))
+            print(classification_report(y_test[col],y_pred_pd[col]))    
     pass
 
                          
@@ -225,17 +241,40 @@ def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
-        X, Y, category_names = load_data(database_filepath)
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        X, y, category_names = load_data(database_filepath)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
         
         print('Building model...')
         model = build_model()
         
         print('Training model...')
-        model.fit(X_train, Y_train)
+        model.fit(X_train, y_train)
+        
+        #GridSearch for Parameter tuning and improving the model
+        ### Mentor feedback ot include grid searchcv
+        parameters = {
+            'features__text_pipeline__vect__ngram_range': ((1, 1), (1, 2)),
+            'features__text_pipeline__vect__max_df': (0.75, 1.0),
+            'features__text_pipeline__vect__max_features': (None, 5000),
+            'features__text_pipeline__tfidf__use_idf': (True, False),
+        #    'clf__n_estimators': [10, 100],
+        #    'clf__learning_rate': [0.01, 0.1],
+        #    'features__transformer_weights': (
+        #        {'text_pipeline': 1, 'starting_verb': 0.5},
+        #        {'text_pipeline': 0.5, 'starting_verb': 1},
+        #        {'text_pipeline': 0.8, 'starting_verb': 1},
+        #    )
+            }
+
+        scorer = make_scorer(multioutput_fscore,greater_is_better = True)
+
+        cv = GridSearchCV(model, param_grid=parameters, scoring = scorer,verbose = 2, n_jobs = -1)
+
+        cv.fit(X_train, y_train)        
+        
         
         print('Evaluating model...')
-        evaluate_model(model, X_test, Y_test, category_names)
+        evaluate_model(model, X_test, y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
