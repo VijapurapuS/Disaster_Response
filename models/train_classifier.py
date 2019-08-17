@@ -1,6 +1,6 @@
 
 # How to run. E.g. below
-# > python train_classifier.py data/DisasterResponse.db models/classifier.pkl
+# > python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 
 import sys
 import pandas as pd
