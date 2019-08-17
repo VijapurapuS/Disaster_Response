@@ -89,6 +89,14 @@ class StartingVerbExtractor(BaseEstimator, TransformerMixin):
     """
 
     def starting_verb(self, text):
+        '''
+        FUNC 
+            Checks for text being in starting verb and returns boolean values
+        INPUT
+            text
+        OUTPUT
+            boolean value
+        '''
         # sentence tokenize
         sentence_list = nltk.sent_tokenize(text)
         
@@ -105,9 +113,23 @@ class StartingVerbExtractor(BaseEstimator, TransformerMixin):
         return False
 
     def fit(self, X, y=None):
+        '''
+        INPUT
+            X feature matrix, y = None
+        OUTPUT
+            returns self
+        '''
         return self
 
     def transform(self, X):
+        '''
+        FUNC
+            Transform Function
+        INPUT
+            X feature matrix
+        OUTPUT
+            X_tagged pandas dataframe after applying starting_verb defined above    
+        '''
         X_tagged = pd.Series(X).apply(self.starting_verb)
         return pd.DataFrame(X_tagged)
 
@@ -133,6 +155,14 @@ def build_model():
     return model
 
 def multioutput_fscore(y_true,y_pred,beta=1):
+    '''
+    FUNC
+        Function defition for multioutput fscore
+    INPUT
+        Takes in three arguments, y_true (Actual result), y_pred (predicted value) and beta
+    OUTPUT
+        Returns the F1 score
+    '''
     score_list = []
     if isinstance(y_pred, pd.DataFrame) == True:
         y_pred = y_pred.values
@@ -156,7 +186,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     '''
     Model Evaluation
     INPUT
-        model, X_test, Y_test, categories
+        Takes 4 arguments model, X_test, Y_test, categories
     OUTPUT
         Prints Accuracy and F1 scores
     '''
@@ -169,11 +199,29 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
                          
 def save_model(model, model_filepath):
+    '''
+    FUNC
+        Saves the pickle model
+    INPUT
+        Takes in two args model and model file path
+    OUTPUT
+        Saves the model.
+    '''
     filename = model_filepath
     pickle.dump(model, open(filename, 'wb'))
     pass
     
 def main():
+    '''
+    FUNC
+        Main function. Program processing begins from here
+    
+    INPUT
+        None
+    
+    OUTPUT
+        Build, Train, Evaluate and Saves the trained model
+    '''
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
