@@ -30,6 +30,8 @@ File Descriptions
 |- train_classifier.py
 |- classifier.pkl  # saved model 
 
+- DSND_Features_Class_GridSearch.txt # GridSearcghCV Logs and Feature Revall, Precision scores
+
 - README.md
 
 This project involves couples of steps:
