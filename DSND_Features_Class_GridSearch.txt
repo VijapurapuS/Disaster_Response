@@ -1,0 +1,521 @@
+root@2e9aea40972c:/home/workspace# python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /root/nltk_data...
+[nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+Loading data...
+    DATABASE: data/DisasterResponse.db
+Building model...
+Training model...
+Fitting 3 folds for each of 16 candidates, totalling 48 fits
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[Parallel(n_jobs=-1)]: Done   1 out of   1 | elapsed:  3.5min remaining:    0.0s
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.2min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.2min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.2min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.9min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.0min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.9min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.2min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.3min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.2min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.6min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.6min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.6min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.0min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.0min
+[CV] features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=True, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.0min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+/opt/conda/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.5min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 5.9min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.0min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.7min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.0min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=0.75, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 3.1min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+/opt/conda/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.7min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.7min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.7min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=None, features__text_pipeline__vect__ngram_range=(1, 2), total= 6.3min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.4min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.4min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 1), total= 2.4min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.8min
+[CV] features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2) 
+[CV]  features__text_pipeline__tfidf__use_idf=False, features__text_pipeline__vect__max_df=1.0, features__text_pipeline__vect__max_features=5000, features__text_pipeline__vect__ngram_range=(1, 2), total= 2.8min
+[Parallel(n_jobs=-1)]: Done  48 out of  48 | elapsed: 209.1min finished
+Evaluating model...
+Average overall accuracy 94.81% 
+
+F1 score (custom definition) 93.73%
+
+******************************************************
+
+FEATURE: related
+
+             precision    recall  f1-score   support
+
+          0       0.50      0.22      0.30      1212
+          1       0.79      0.93      0.86      3978
+          2       0.35      0.13      0.19        46
+
+avg / total       0.72      0.76      0.72      5236
+
+******************************************************
+
+FEATURE: request
+
+             precision    recall  f1-score   support
+
+          0       0.92      0.97      0.94      4369
+          1       0.79      0.58      0.67       867
+
+avg / total       0.90      0.90      0.90      5236
+
+******************************************************
+
+FEATURE: offer
+
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      5211
+          1       0.00      0.00      0.00        25
+
+avg / total       0.99      0.99      0.99      5236
+
+******************************************************
+
+FEATURE: aid_related
+
+             precision    recall  f1-score   support
+
+          0       0.75      0.87      0.80      3086
+          1       0.75      0.57      0.65      2150
+
+avg / total       0.75      0.75      0.74      5236
+
+******************************************************
+
+FEATURE: medical_help
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.96      4790
+          1       0.64      0.27      0.38       446
+
+avg / total       0.91      0.93      0.91      5236
+
+******************************************************
+
+FEATURE: medical_products
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.99      0.98      4975
+          1       0.66      0.35      0.46       261
+
+avg / total       0.95      0.96      0.95      5236
+
+******************************************************
+
+FEATURE: search_and_rescue
+
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      5094
+          1       0.72      0.23      0.35       142
+
+avg / total       0.97      0.98      0.97      5236
+
+******************************************************
+
+FEATURE: security
+
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      5149
+          1       0.36      0.09      0.15        87
+
+avg / total       0.97      0.98      0.98      5236
+
+******************************************************
+
+FEATURE: military
+
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      5077
+          1       0.67      0.29      0.40       159
+
+avg / total       0.97      0.97      0.97      5236
+
+******************************************************
+
+FEATURE: child_alone
+
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      5236
+
+avg / total       1.00      1.00      1.00      5236
+
+******************************************************
+
+FEATURE: water
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.99      0.98      4893
+          1       0.73      0.58      0.65       343
+
+avg / total       0.96      0.96      0.96      5236
+
+******************************************************
+
+FEATURE: food
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.98      0.97      4691
+          1       0.79      0.71      0.75       545
+
+avg / total       0.95      0.95      0.95      5236
+
+******************************************************
+
+FEATURE: shelter
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.97      4783
+          1       0.79      0.56      0.66       453
+
+avg / total       0.94      0.95      0.95      5236
+
+******************************************************
+
+FEATURE: clothing
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5159
+          1       0.64      0.44      0.52        77
+
+avg / total       0.99      0.99      0.99      5236
+
+******************************************************
+
+FEATURE: money
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      5122
+          1       0.52      0.31      0.39       114
+
+avg / total       0.97      0.98      0.98      5236
+
+******************************************************
+
+FEATURE: missing_people
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5179
+          1       0.56      0.16      0.25        57
+
+avg / total       0.99      0.99      0.99      5236
+
+******************************************************
+
+FEATURE: refugees
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      5076
+          1       0.58      0.29      0.38       160
+
+avg / total       0.97      0.97      0.97      5236
+
+******************************************************
+
+FEATURE: death
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.98      5000
+          1       0.76      0.49      0.60       236
+
+avg / total       0.97      0.97      0.97      5236
+
+******************************************************
+
+FEATURE: other_aid
+
+             precision    recall  f1-score   support
+
+          0       0.88      0.97      0.92      4537
+          1       0.45      0.14      0.22       699
+
+avg / total       0.82      0.86      0.83      5236
+
+******************************************************
+
+FEATURE: infrastructure_related
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.97      4901
+          1       0.51      0.13      0.21       335
+
+avg / total       0.92      0.94      0.92      5236
+
+******************************************************
+
+FEATURE: transport
+
+             precision    recall  f1-score   support
+
+          0       0.97      1.00      0.98      4999
+          1       0.76      0.28      0.41       237
+
+avg / total       0.96      0.96      0.96      5236
+
+******************************************************
+
+FEATURE: buildings
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.99      0.98      4967
+          1       0.68      0.42      0.52       269
+
+avg / total       0.95      0.96      0.96      5236
+
+******************************************************
+
+FEATURE: electricity
+
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      5142
+          1       0.52      0.16      0.24        94
+
+avg / total       0.98      0.98      0.98      5236
+
+******************************************************
+
+FEATURE: tools
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      5194
+          1       0.25      0.05      0.08        42
+
+avg / total       0.99      0.99      0.99      5236
+
+******************************************************
+
+FEATURE: hospitals
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5178
+          1       0.36      0.09      0.14        58
+
+avg / total       0.98      0.99      0.98      5236
+
+******************************************************
+
+FEATURE: shops
+
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      5214
+          1       0.33      0.05      0.08        22
+
+avg / total       0.99      1.00      0.99      5236
+
+******************************************************
+
+FEATURE: aid_centers
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5182
+          1       0.20      0.06      0.09        54
+
+avg / total       0.98      0.99      0.98      5236
+
+******************************************************
+
+FEATURE: other_infrastructure
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.98      5003
+          1       0.37      0.11      0.17       233
+
+avg / total       0.93      0.95      0.94      5236
+
+******************************************************
+
+FEATURE: weather_related
+
+             precision    recall  f1-score   support
+
+          0       0.89      0.95      0.92      3782
+          1       0.84      0.68      0.75      1454
+
+avg / total       0.87      0.88      0.87      5236
+
+******************************************************
+
+FEATURE: floods
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.98      4831
+          1       0.87      0.57      0.69       405
+
+avg / total       0.96      0.96      0.96      5236
+
+******************************************************
+
+FEATURE: storm
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.98      0.97      4746
+          1       0.76      0.51      0.61       490
+
+avg / total       0.93      0.94      0.93      5236
+
+******************************************************
+
+FEATURE: fire
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5176
+          1       0.45      0.28      0.35        60
+
+avg / total       0.99      0.99      0.99      5236
+
+******************************************************
+
+FEATURE: earthquake
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.99      0.98      4718
+          1       0.88      0.75      0.81       518
+
+avg / total       0.96      0.96      0.96      5236
+
+******************************************************
+
+FEATURE: cold
+
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      5147
+          1       0.58      0.33      0.42        89
+
+avg / total       0.98      0.98      0.98      5236
+
+******************************************************
+
+FEATURE: other_weather
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.97      4967
+          1       0.51      0.18      0.26       269
+
+avg / total       0.93      0.95      0.94      5236
+
+******************************************************
+
+FEATURE: direct_report
+
+             precision    recall  f1-score   support
+
+          0       0.89      0.96      0.92      4264
+          1       0.73      0.49      0.59       972
+
+avg / total       0.86      0.87      0.86      5236
+
+Saving model...
+    MODEL: models/classifier.pkl
+Trained model saved!
