@@ -11,9 +11,9 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
+from plotly.graph_objs import Bar, Heatmap
 
 
 app = Flask(__name__)
@@ -68,6 +68,11 @@ def index():
     category_names = df.iloc[:,4:].columns
     category_boolean = (df.iloc[:,4:] != 0).sum().values
     
+    corr_list=[]
+    correl = df.corr().values
+    for i in correl:
+        corr_list.append(list(i))
+        
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -110,7 +115,28 @@ def index():
                     'tickangle': 35
                 }
             }
-        }
+        },
+            # GRAPH 3 - Correlation Graph   
+        {
+            'data': [
+                Heatmap(
+                    z=corr_list,
+                    x=category_names,
+                    y=category_names
+                )
+            ],
+            'layout': {
+                'title': 'Correlation of Message Categories',
+                'height':720,
+                'yaxis': {
+#                    'title': "Category"
+                },
+                'xaxis': {
+#                    'title': "Category",
+#                    'tickangle': 35
+                }
+            }
+        }      
     ]
     
     # encode plotly graphs in JSON
