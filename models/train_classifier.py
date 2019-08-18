@@ -250,21 +250,21 @@ def main():
         print('Training model...')
         model.fit(X_train, y_train)
         
-        #GridSearch for Parameter tuning and improving the model
-        ### Mentor feedback ot include grid searchcv
-        parameters = {
-            'features__text_pipeline__vect__ngram_range': ((1, 1), (1, 2)),
-            'features__text_pipeline__vect__max_df': (0.75, 1.0),
-            'features__text_pipeline__vect__max_features': (None, 5000),
-            'features__text_pipeline__tfidf__use_idf': (True, False),
-        #    'clf__n_estimators': [10, 100],
-        #    'clf__learning_rate': [0.01, 0.1],
-        #    'features__transformer_weights': (
-        #        {'text_pipeline': 1, 'starting_verb': 0.5},
-        #        {'text_pipeline': 0.5, 'starting_verb': 1},
-        #        {'text_pipeline': 0.8, 'starting_verb': 1},
-        #    )
-            }
+#         #GridSearch for Parameter tuning and improving the model
+#         ### Mentor feedback ot include grid searchcv
+#         parameters = {
+#             'features__text_pipeline__vect__ngram_range': ((1, 1), (1, 2)),
+#             'features__text_pipeline__vect__max_df': (0.75, 1.0),
+#             'features__text_pipeline__vect__max_features': (None, 5000),
+#             'features__text_pipeline__tfidf__use_idf': (True, False),
+#         #    'clf__n_estimators': [10, 100],
+#         #    'clf__learning_rate': [0.01, 0.1],
+#         #    'features__transformer_weights': (
+#         #        {'text_pipeline': 1, 'starting_verb': 0.5},
+#         #        {'text_pipeline': 0.5, 'starting_verb': 1},
+#         #        {'text_pipeline': 0.8, 'starting_verb': 1},
+#         #    )
+#             }
 
         scorer = make_scorer(multioutput_fscore,greater_is_better = True)
 
